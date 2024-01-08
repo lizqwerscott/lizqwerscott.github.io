@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>nx版cv_bridge问题 - 我的全新 Hugo 网站</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="nx版cv_bridge问题" />
+<meta property="og:description" content="Use Ros cv_bridge with Python3 in ROS Melodic 背景 在使用 ROS Melodic 的时候, cv_bridge默认是使用python2.7. 在 python3 中使用cv bridge 会出现错误. 解决办法 自己编译pytho" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-10-25T20:42:00+08:00" />
+<meta property="article:modified_time" content="2023-10-25T20:43:09+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="nx版cv_bridge问题"/>
+<meta name="twitter:description" content="Use Ros cv_bridge with Python3 in ROS Melodic 背景 在使用 ROS Melodic 的时候, cv_bridge默认是使用python2.7. 在 python3 中使用cv bridge 会出现错误. 解决办法 自己编译pytho"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "nx版cv_bridge问题",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/2023\/10\/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98\/"
+        },"genre": "posts","keywords": "program","wordcount":  420 ,
+        "url": "http:\/\/example.org\/posts\/2023\/10\/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98\/","datePublished": "2023-10-25T20:42:00+08:00","dateModified": "2023-10-25T20:43:09+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="我的全新 Hugo 网站">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="我的全新 Hugo 网站">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">nx版cv_bridge问题</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/program/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>program</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-10-25">2023-10-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 420 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#use-ros-cv-bridge-with-python3-in-ros-melodic">Use Ros cv_bridge with Python3 in ROS Melodic</a>
+      <ul>
+        <li><a href="#背景">背景</a></li>
+        <li><a href="#解决办法">解决办法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="use-ros-cv-bridge-with-python3-in-ros-melodic">Use Ros cv_bridge with Python3 in ROS Melodic</h2>
+<h3 id="背景">背景</h3>
+<p>在使用 ROS Melodic 的时候, cv_bridge默认是使用python2.7.
+在 python3 中使用cv bridge 会出现错误.</p>
+<h3 id="解决办法">解决办法</h3>
+<p>自己编译python3 版本的cv bridge</p>
+<h4 id="依赖">依赖</h4>
+<p>使用以下命令安装需要的依赖</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install python3-pip python-catkin-tools python3-dev python3-numpy
+</span></span><span class="line"><span class="cl">sudo pip3 install rospkg catkin_pkg
+</span></span></code></pre></div><h4 id="编译">编译</h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>需要创建一个工作空间</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p ~/cvbridge_build_ws/src
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/cvbridge_build_ws/src
+</span></span></code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>下载noetic版本的cv bridge</p>
+<p>使用这个github仓库的noetic分支, 将代码放到cvbridge_build_ws/src目录下</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>git clone</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone -b noetic https://github.com/ros-perception/vision_opencv.git
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>修改需要编译的Python版本</p>
+<p>首先需要确保你 Ubuntu 系统的python默认是python3, 修改 vision_opencv/cv_bridge/CMakeLists.txt
+将:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">find_package</span><span class="p">(</span><span class="s">Boost</span> <span class="s">REQUIRED</span> <span class="s">python37</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><p>修改为:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">find_package</span><span class="p">(</span><span class="s">Boost</span> <span class="s">REQUIRED</span> <span class="s">python3</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>编译</p>
+<p>首先需要知道你的python3路径在那里, 可以使用以下命令获得:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">where python3
+</span></span></code></pre></div><p>或者</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">which python3
+</span></span></code></pre></div><p>然后知道python的include路径, 可以使用以下命令获得:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span> <span class="c1">#Print python3 executable path</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">)</span> <span class="c1">#Print python3 library path</span>
+</span></span></code></pre></div><p>或者使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python3-config --includes
+</span></span></code></pre></div><p>然后根据以下获得的变量执行下列命令:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/cvbridge_build_ws
+</span></span><span class="line"><span class="cl">catkin config -DPYTHON_EXECUTABLE<span class="o">=</span>/usr/bin/python3 -DPYTHON_INCLUDE_DIR<span class="o">=</span>/usr/include/python3.6m -DPYTHON_LIBRARY<span class="o">=</span>/usr/lib/aarch64-linux-gnu/libpython3.6m.so
+</span></span><span class="line"><span class="cl">catkin config --install
+</span></span></code></pre></div><p>编译cv_bridge</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">catkin build cv_bridge
+</span></span></code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>使用</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>当前终端临时使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> install/setup.bash --extend
+</span></span></code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>开机自动使用</p>
+<p>可以添加到.bashrc里面</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> ~/cvbridge_build_ws/install/setup.bash --extend
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-10-25</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/" data-title="nx版cv_bridge问题" data-hashtags="program"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/" data-hashtag="program"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://example.org/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/" data-title="nx版cv_bridge问题"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/" data-title="nx版cv_bridge问题"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/" data-title="nx版cv_bridge问题"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/program/">program</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.121.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

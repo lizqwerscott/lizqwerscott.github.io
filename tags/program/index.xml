@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>program - 标签 - 我的全新 Hugo 网站</title>
+        <link>http://example.org/tags/program/</link>
+        <description>program - 标签 - 我的全新 Hugo 网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 25 Oct 2023 20:42:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/program/" rel="self" type="application/rss+xml" /><item>
+    <title>nx版cv_bridge问题</title>
+    <link>http://example.org/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/</link>
+    <pubDate>Wed, 25 Oct 2023 20:42:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/</guid>
+    <description><![CDATA[Use Ros cv_bridge with Python3 in ROS Melodic 背景 在使用 ROS Melodic 的时候, cv_bridge默认是使用python2.7. 在 python3 中使用cv bridge 会出现错误. 解决办法 自己编译pytho]]></description>
+</item>
+</channel>
+</rss>
