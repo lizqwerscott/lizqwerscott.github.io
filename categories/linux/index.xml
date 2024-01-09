@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>linux - 分类 - Lizqwerscott 的博客</title>
+        <link>http://lizqwerscott.github.io/categories/linux/</link>
+        <description>linux - 分类 - Lizqwerscott 的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
+            <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster><lastBuildDate>Tue, 09 Jan 2024 21:50:00 &#43;0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/categories/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux 软件</title>
+    <link>http://lizqwerscott.github.io/posts/2024/01/20231127205837-linux_%E8%BD%AF%E4%BB%B6/</link>
+    <pubDate>Tue, 09 Jan 2024 21:50:00 &#43;0800</pubDate>
+    <author>lizqwerscott</author>
+    <guid>http://lizqwerscott.github.io/posts/2024/01/20231127205837-linux_%E8%BD%AF%E4%BB%B6/</guid>
+    <description><![CDATA[软件列表 查看图片 nsxiv feh ssh tssh 可以搜索, 支持快捷登录 ssh. 文档 trzsz 文档 快速使用指南 trz 上传文件 trz 命令可以不带任何参数，将上传文件到当前目录。也可以带一个目]]></description>
+</item>
+</channel>
+</rss>
