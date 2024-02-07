@@ -12,7 +12,7 @@
     <pubDate>Tue, 09 Jan 2024 21:50:00 &#43;0800</pubDate>
     <author>lizqwerscott</author>
     <guid>http://lizqwerscott.github.io/posts/2024/01/20231127205837-linux_%E8%BD%AF%E4%BB%B6/</guid>
-    <description><![CDATA[软件列表 查看图片 nsxiv feh ssh tssh 可以搜索, 支持快捷登录 ssh. 文档 trzsz 文档 快速使用指南 trz 上传文件 trz 命令可以不带任何参数，将上传文件到当前目录。也可以带一个目]]></description>
+    <description><![CDATA[软件列表 查看图片 nsxiv feh ssh tssh 可以搜索, 支持快捷登录 ssh. 文档 trzsz 文档 安装 Ubuntu sudo apt update &amp;&amp; sudo apt install software-properties-common sudo add-apt-repository ppa:trzsz/ppa &amp;&amp; sudo apt update sudo apt install trzsz Arch yay -Syu yay -S trzsz 快速使用指南 trz 上传文件 trz 命]]></description>
 </item>
 <item>
     <title>nx版cv_bridge问题</title>
