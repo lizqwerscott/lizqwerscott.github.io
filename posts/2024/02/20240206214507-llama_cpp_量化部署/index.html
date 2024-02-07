@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>llama.cpp 量化部署 - Lizqwerscott 的博客</title><meta name="Description" content="Lizqwerscott 的博客"><meta property="og:title" content="llama.cpp 量化部署" />
+<meta property="og:description" content="克隆和编译llama.cpp 下载 llamap.cpp 代码 git clone https://github.com/ggerganov/llama.cpp （可选）如需使用qX_k 量化方法（相比常规量化方法效果更好） 请手动打开llama.cpp文件，修" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://lizqwerscott.github.io/posts/2024/02/20240206214507-llama_cpp_%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-07T11:06:00+08:00" />
+<meta property="article:modified_time" content="2024-02-07T11:08:17+08:00" /><meta property="og:site_name" content="Lizqwerscott 的博客" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="llama.cpp 量化部署"/>
+<meta name="twitter:description" content="克隆和编译llama.cpp 下载 llamap.cpp 代码 git clone https://github.com/ggerganov/llama.cpp （可选）如需使用qX_k 量化方法（相比常规量化方法效果更好） 请手动打开llama.cpp文件，修"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://lizqwerscott.github.io/posts/2024/02/20240206214507-llama_cpp_%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2/" /><link rel="prev" href="http://lizqwerscott.github.io/posts/2024/01/20231127205837-linux_%E8%BD%AF%E4%BB%B6/" /><link rel="next" href="http://lizqwerscott.github.io/posts/2024/02/20240207102308-huggingface_%E4%B8%8B%E8%BD%BD%E6%A8%A1%E5%9E%8B/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "llama.cpp 量化部署",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/lizqwerscott.github.io\/posts\/2024\/02\/20240206214507-llama_cpp_%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2\/"
+        },"genre": "posts","keywords": "ai","wordcount":  1433 ,
+        "url": "http:\/\/lizqwerscott.github.io\/posts\/2024\/02\/20240206214507-llama_cpp_%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2\/","datePublished": "2024-02-07T11:06:00+08:00","dateModified": "2024-02-07T11:08:17+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "lizqwerscott"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lizqwerscott 的博客"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lizqwerscott 的博客"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">llama.cpp 量化部署</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/lizqwerscott" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>lizqwerscott</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/ai/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>ai</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-07">2024-02-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1433 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#克隆和编译llama-dot-cpp">克隆和编译llama.cpp</a>
+      <ul>
+        <li><a href="#下载-llamap-dot-cpp-代码">下载 llamap.cpp 代码</a></li>
+        <li><a href="#可选-如需使用qx-k-量化方法-相比常规量化方法效果更好">（可选）如需使用qX_k 量化方法（相比常规量化方法效果更好）</a></li>
+        <li><a href="#对llama-dot-cpp项目进行编译-生成-dot-main和-dot-quantize二进制文件">对llama.cpp项目进行编译，生成./main和./quantize二进制文件。</a></li>
+      </ul>
+    </li>
+    <li><a href="#生成量化版本模型">生成量化版本模型</a>
+      <ul>
+        <li><a href="#本地的-pth-格式模型">本地的 pth 格式模型</a></li>
+        <li><a href="#从-huggingface-下载的模型">从 <a href="https://huggingface.co/">huggingface</a> 下载的模型</a></li>
+      </ul>
+    </li>
+    <li><a href="#加载并启动模型">加载并启动模型</a>
+      <ul>
+        <li><a href="#直接运行">直接运行</a></li>
+        <li><a href="#启动服务器">启动服务器</a></li>
+      </ul>
+    </li>
+    <li><a href="#关于量化方法选择及推理速度">关于量化方法选择及推理速度</a>
+      <ul>
+        <li><a href="#结论">结论</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="克隆和编译llama-dot-cpp">克隆和编译llama.cpp</h2>
+<h3 id="下载-llamap-dot-cpp-代码">下载 llamap.cpp 代码</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/ggerganov/llama.cpp
+</span></span></code></pre></div><h3 id="可选-如需使用qx-k-量化方法-相比常规量化方法效果更好">（可选）如需使用qX_k 量化方法（相比常规量化方法效果更好）</h3>
+<p>请手动打开llama.cpp文件，修改下列行（约2500行左右）</p>
+<h4 id="原始代码">原始代码</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">nx</span> <span class="o">%</span> <span class="n">QK_K</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">ny</span> <span class="o">%</span> <span class="n">QK_K</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span></code></pre></div><h4 id="新代码">新代码</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">nx</span> <span class="o">%</span> <span class="n">QK_K</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span></code></pre></div><h3 id="对llama-dot-cpp项目进行编译-生成-dot-main和-dot-quantize二进制文件">对llama.cpp项目进行编译，生成./main和./quantize二进制文件。</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make
+</span></span></code></pre></div><h4 id="windows-linux用户">Windows/Linux用户</h4>
+<p>推荐与BLAS（或cuBLAS如果有GPU）一起编译，可以提高prompt处理速度，参考: <a href="https://github.com/ggerganov/llama.cpp#blas-build" target="_blank" rel="noopener noreffer ">llama.cpp#blas-build</a></p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>BLAS 编译命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make <span class="nv">LLAMA_OPENBLAS</span><span class="o">=</span><span class="m">1</span>
+</span></span></code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>cuBLAS(有GPU) 编译命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make <span class="nv">LLAMA_CUBLAS</span><span class="o">=</span><span class="m">1</span>
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="macos用户">macOS用户</h4>
+<p>无需额外操作，llama.cpp已对ARM NEON做优化，并且已自动启用BLAS。</p>
+<h4 id="m系列芯片">M系列芯片</h4>
+<p>推荐使用Metal启用GPU推理，显著提升速度。参考, <a href="https://github.com/ggerganov/llama.cpp#metal-build" target="_blank" rel="noopener noreffer ">llama.cpp#metal-build</a>
+只需将编译命令改为:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">LLAMA_METAL</span><span class="o">=</span><span class="m">1</span> make
+</span></span></code></pre></div><h2 id="生成量化版本模型">生成量化版本模型</h2>
+<h3 id="本地的-pth-格式模型">本地的 pth 格式模型</h3>
+<h4 id="处理目录结构">处理目录结构</h4>
+<p>将合并模型（.pth格式模型）中最后一步生成的 tokenizer.model 文件放入 zh-models 目录下，模型文件 consolidated.*.pth 和配置文件 params.json 放入 zh-models/7B 目录下。请注意 LLaMA 和 Alpaca 的 tokenizer.model 不可混用（原因见训练细节）。例如，如果是.pth格式的模型，目录结构类似：</p>
+<blockquote>
+<p>llama.cpp/zh-models/</p>
+<ul>
+<li>7B/
+<ul>
+<li>consolidated.00.pth</li>
+<li>params.json</li>
+</ul>
+</li>
+<li>tokenizer.model</li>
+</ul>
+</blockquote>
+<h4 id="将上述-dot-pth模型权重转换为-gguf-的fp16格式">将上述.pth模型权重转换为 gguf 的FP16格式</h4>
+<p>生成文件路径为 zh-models/7B/ggml-model-f16.bin</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python convert.py zh-models/7B/
+</span></span></code></pre></div><h4 id="进一步对fp16模型进行4-bit量化">进一步对FP16模型进行4-bit量化</h4>
+<p>生成量化模型文件路径为 zh-models/7B/ggml-model-q4_0.guff。不同量化方法的性能对比见本文最后。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./quantize ./zh-models/7B/ggml-model-f16.bin ./zh-models/7B/ggml-model-q4_0.bin q4_0
+</span></span></code></pre></div><h3 id="从-huggingface-下载的模型">从 <a href="https://huggingface.co/" target="_blank" rel="noopener noreffer ">huggingface</a> 下载的模型</h3>
+<h4 id="首先下载模型">首先下载模型</h4>
+<p>可以从 <a href="/posts/2024/02/20240207102308-huggingface_%E4%B8%8B%E8%BD%BD%E6%A8%A1%E5%9E%8B/" rel="">huggingface 下载模型</a> 了解.</p>
+<h4 id="获取下载目录">获取下载目录</h4>
+<p>一般下载好的就在 ~/.cache/huggingface/hub 目录中.
+例如, 从 <a href="https://huggingface.co/YeungNLP/firefly-llama2-13b-chat" target="_blank" rel="noopener noreffer ">firefly-llama2-13b-chat</a> 下载的就在:</p>
+<blockquote>
+<p>~/.cache/huggingface/hub/models&ndash;YeungNLP&ndash;firefly-llama2-13b-chat/snapshots/7e72d87fb49a727d9078b4d721e3319f4642f8bc</p>
+</blockquote>
+<h4 id="转换">转换</h4>
+<p>直接执行这个脚本, 生成的 guff 模型就在你下载的模型文件夹中</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python convert.py /path/model/path
+</span></span></code></pre></div><h4 id="量化">量化</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./quantize ./path/model-f16.pth ./path/model-q4_0.gguf q4_0
+</span></span></code></pre></div><h2 id="加载并启动模型">加载并启动模型</h2>
+<h3 id="直接运行">直接运行</h3>
+<h4 id="cpu-直接运行">CPU 直接运行</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./main -m ./models/chinese-13b/firefly-llama2-13b-chat-q4_0.guff -c <span class="m">512</span> -b <span class="m">8</span> -n <span class="m">256</span> --keep <span class="m">48</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --repeat_penalty 1.0 --color -i -t <span class="m">16</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -r <span class="s2">&#34;User:&#34;</span> -f prompts/chat-with-bob.txt
+</span></span></code></pre></div><h4 id="cpu-与-gpu-运行">CPU 与 GPU 运行</h4>
+<p>如已通过 Metal 编译或者使用了 cuBLAS 编译，则只需加上 -ngl 1 即可启用GPU推理.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./main -m ./models/chinese-13b/firefly-llama2-13b-chat-q4_0.guff -ngl <span class="m">1</span> -c <span class="m">512</span> -b <span class="m">8</span> -n <span class="m">256</span> --keep <span class="m">48</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --repeat_penalty 1.0 --color -i -t <span class="m">16</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -r <span class="s2">&#34;User:&#34;</span> -f prompts/chat-with-bob.txt
+</span></span></code></pre></div><h4 id="常用命令">常用命令</h4>
+<p>在提示符 &gt; 之后输入你的 prompt，cmd/ctrl+c 中断输出，多行信息以 \ 作为行尾。
+如需查看帮助和参数说明，请执行 ./main -h 命令。</p>
+<h4 id="常用运行参数">常用运行参数</h4>
+<blockquote>
+<p>-c 控制上下文的长度，值越大越能参考更长的对话历史（默认：512）
+-ins / -i 启动类 ChatGPT 对话交流的 instruction 运行模式
+-f 指定 prompt 模板，alpaca 模型请加载 prompts/alpaca.txt, 所有模板都在 prompts/ 目录下面
+-n 控制回复生成的最大长度（默认：128）
+-b 控制 batch size（默认：8），可适当增加
+-t 控制线程数量（默认：4），可适当增加
+&ndash;repeat_penalty 控制生成回复中对重复文本的惩罚力度
+&ndash;temp 温度系数，值越低回复的随机性越小，反之越大
+&ndash;top_p, top_k 控制解码采样的相关参数</p>
+</blockquote>
+<p>更详细的官方说明请参考：<a href="https://github.com/ggerganov/llama.cpp/tree/master/examples/main" target="_blank" rel="noopener noreffer ">https://github.com/ggerganov/llama.cpp/tree/master/examples/main</a></p>
+<h3 id="启动服务器">启动服务器</h3>
+<p>和直接运行一样, 可以 CPU 与 GPU 一起运行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./server -m ./models/chinese-13b/firefly-llama2-13b-chat-q5_k_s.guff -ngl <span class="m">25</span> -c <span class="m">512</span> -b <span class="m">8</span> -n <span class="m">256</span> -t <span class="m">8</span>
+</span></span></code></pre></div><p>更多介绍:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./server -h
+</span></span></code></pre></div><h2 id="关于量化方法选择及推理速度">关于量化方法选择及推理速度</h2>
+<p>量化参数介绍: <a href="https://github.com/ggerganov/llama.cpp#quantization" target="_blank" rel="noopener noreffer ">llamap.cpp 量化统计表</a></p>
+<h3 id="结论">结论</h3>
+<p>结论来源: <a href="https://github.com/ymcui/Chinese-LLaMA-Alpaca/wiki/llama.cpp%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2" target="_blank" rel="noopener noreffer ">alpaca llama.cpp 量化部署</a></p>
+<ul>
+<li>默认的量化方法为 q4_0，虽然速度最快但损失也是最大的，其余方法各有利弊，按实际情况选择</li>
+<li>需要注意的是F16以及 q8_0 并不会因为增加线程数而提高太多速度</li>
+<li>线程数 -t 与物理核心数一致时速度最快，超过之后速度反而变慢（M1 Max上从8改到10之后耗时变为3倍）</li>
+<li>如果使用了Metal版本（即启用了苹果GPU解码），速度还会有进一步显著提升，表中标注为 -ngl 1</li>
+<li>综合推荐（仅供参考）：7B推荐 Q5_1 或 Q5_K_S，13B 推荐 Q5_0 或 Q5_K_S</li>
+<li>机器资源够用且对速度要求不是那么苛刻的情况下可以使用 q8_0 或 Q6_K，接近 F16 模型的效果</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-02-07</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://lizqwerscott.github.io/posts/2024/02/20240206214507-llama_cpp_%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2/" data-title="llama.cpp 量化部署" data-hashtags="ai"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://lizqwerscott.github.io/posts/2024/02/20240206214507-llama_cpp_%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2/" data-hashtag="ai"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://lizqwerscott.github.io/posts/2024/02/20240206214507-llama_cpp_%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2/" data-title="llama.cpp 量化部署"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://lizqwerscott.github.io/posts/2024/02/20240206214507-llama_cpp_%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2/" data-title="llama.cpp 量化部署"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://lizqwerscott.github.io/posts/2024/02/20240206214507-llama_cpp_%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2/" data-title="llama.cpp 量化部署"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/ai/">ai</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/2024/01/20231127205837-linux_%E8%BD%AF%E4%BB%B6/" class="prev" rel="prev" title="Linux 软件"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Linux 软件</a>
+            <a href="/posts/2024/02/20240207102308-huggingface_%E4%B8%8B%E8%BD%BD%E6%A8%A1%E5%9E%8B/" class="next" rel="next" title="huggingface 下载模型">huggingface 下载模型<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.122.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/lizqwerscott" target="_blank">lizqwerscott</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"data":{"id-1":"Lizqwerscott 的博客","id-2":"Lizqwerscott 的博客"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
