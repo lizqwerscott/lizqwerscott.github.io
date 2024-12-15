@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://lizqwerscott.github.io/sitemap.xml

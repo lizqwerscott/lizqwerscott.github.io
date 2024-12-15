@@ -1,16 +1,25 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Program - 分类 - Lizqwerscott 的博客</title>
-        <link>http://lizqwerscott.github.io/categories/program/</link>
-        <description>Program - 分类 - Lizqwerscott 的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
-            <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster><lastBuildDate>Wed, 25 Oct 2023 20:42:00 &#43;0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/categories/program/" rel="self" type="application/rss+xml" /><item>
-    <title>nx版cv_bridge问题</title>
-    <link>http://lizqwerscott.github.io/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/</link>
-    <pubDate>Wed, 25 Oct 2023 20:42:00 &#43;0800</pubDate>
-    <author>lizqwerscott</author>
-    <guid>http://lizqwerscott.github.io/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/</guid>
-    <description><![CDATA[Use Ros cv_bridge with Python3 in ROS Melodic 背景 在使用 ROS Melodic 的时候, cv_bridge默认是使用python2.7. 在 python3 中使用cv bridge 会出现错误. 解决办法 自己编译pytho]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Program on Lizqwerscott 的博客</title>
+    <link>http://lizqwerscott.github.io/categories/program/</link>
+    <description>Recent content in Program on Lizqwerscott 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
+    <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
+    <copyright>© 2024 lizqwerscott</copyright>
+    <lastBuildDate>Wed, 25 Oct 2023 20:42:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>nx版cv_bridge问题</title>
+      <link>http://lizqwerscott.github.io/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 25 Oct 2023 20:42:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
 </rss>

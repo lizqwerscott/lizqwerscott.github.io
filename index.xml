@@ -1,42 +1,75 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Lizqwerscott 的博客</title>
-        <link>http://lizqwerscott.github.io/</link>
-        <description>Lizqwerscott 的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
-            <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster><lastBuildDate>Wed, 07 Feb 2024 11:07:00 &#43;0800</lastBuildDate>
-            <atom:link href="http://lizqwerscott.github.io/index.xml" rel="self" type="application/rss+xml" />
-        <item>
-    <title>huggingface 下载模型</title>
-    <link>http://lizqwerscott.github.io/posts/2024/02/20240207102308-huggingface_%E4%B8%8B%E8%BD%BD%E6%A8%A1%E5%9E%8B/</link>
-    <pubDate>Wed, 07 Feb 2024 11:07:00 &#43;0800</pubDate>
-    <author>lizqwerscott</author>
-    <guid>http://lizqwerscott.github.io/posts/2024/02/20240207102308-huggingface_%E4%B8%8B%E8%BD%BD%E6%A8%A1%E5%9E%8B/</guid>
-    <description><![CDATA[手动下载模型 打开模型的对应页面, 手动点击下载. 缺点: 只能一个一个下载 Git LFS 模型下载方案（优雅，但不够灵活） 准备工作 Git LFS的方案相较于前面自行]]></description>
-</item>
-<item>
-    <title>llama.cpp 量化部署</title>
-    <link>http://lizqwerscott.github.io/posts/2024/02/20240206214507-llama_cpp_%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2/</link>
-    <pubDate>Wed, 07 Feb 2024 11:06:00 &#43;0800</pubDate>
-    <author>lizqwerscott</author>
-    <guid>http://lizqwerscott.github.io/posts/2024/02/20240206214507-llama_cpp_%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2/</guid>
-    <description><![CDATA[克隆和编译llama.cpp 下载 llamap.cpp 代码 git clone https://github.com/ggerganov/llama.cpp （可选）如需使用qX_k 量化方法（相比常规量化方法效果更好） 请手动打开llama.cpp文件，修]]></description>
-</item>
-<item>
-    <title>Linux 软件</title>
-    <link>http://lizqwerscott.github.io/posts/2024/01/20231127205837-linux_%E8%BD%AF%E4%BB%B6/</link>
-    <pubDate>Tue, 09 Jan 2024 21:50:00 &#43;0800</pubDate>
-    <author>lizqwerscott</author>
-    <guid>http://lizqwerscott.github.io/posts/2024/01/20231127205837-linux_%E8%BD%AF%E4%BB%B6/</guid>
-    <description><![CDATA[查看图片 nsxiv feh ueberzugpp ssh tssh 可以搜索, 支持快捷登录 ssh. 文档 trzsz 文档 安装 Ubuntu sudo apt update &amp;&amp; sudo apt install software-properties-common sudo add-apt-repository ppa:trzsz/ppa &amp;&amp; sudo apt update sudo apt install trzsz Arch yay -Syu yay -S trzsz 快速使用指南 trz 上传文件 trz 命令可以]]></description>
-</item>
-<item>
-    <title>nx版cv_bridge问题</title>
-    <link>http://lizqwerscott.github.io/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/</link>
-    <pubDate>Wed, 25 Oct 2023 20:42:00 &#43;0800</pubDate>
-    <author>lizqwerscott</author>
-    <guid>http://lizqwerscott.github.io/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/</guid>
-    <description><![CDATA[Use Ros cv_bridge with Python3 in ROS Melodic 背景 在使用 ROS Melodic 的时候, cv_bridge默认是使用python2.7. 在 python3 中使用cv bridge 会出现错误. 解决办法 自己编译pytho]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lizqwerscott 的博客</title>
+    <link>http://lizqwerscott.github.io/</link>
+    <description>Recent content on Lizqwerscott 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
+    <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
+    <copyright>© 2024 lizqwerscott</copyright>
+    <lastBuildDate>Sun, 15 Dec 2024 10:00:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>meow 进入 beacon-mode 后关闭括号自动配对功能</title>
+      <link>http://lizqwerscott.github.io/posts/2024/12/20241214203953-meow_%E8%BF%9B%E5%85%A5_beacon_mode_%E5%90%8E%E5%85%B3%E9%97%AD%E6%8B%AC%E5%8F%B7%E8%87%AA%E5%8A%A8%E9%85%8D%E5%AF%B9%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Sun, 15 Dec 2024 10:00:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2024/12/20241214203953-meow_%E8%BF%9B%E5%85%A5_beacon_mode_%E5%90%8E%E5%85%B3%E9%97%AD%E6%8B%AC%E5%8F%B7%E8%87%AA%E5%8A%A8%E9%85%8D%E5%AF%B9%E5%8A%9F%E8%83%BD/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>meow 多行编辑的一些技巧</title>
+      <link>http://lizqwerscott.github.io/posts/2024/12/20241214205845-meow_%E5%A4%9A%E8%A1%8C%E7%BC%96%E8%BE%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Sun, 15 Dec 2024 09:59:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2024/12/20241214205845-meow_%E5%A4%9A%E8%A1%8C%E7%BC%96%E8%BE%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>huggingface 下载模型</title>
+      <link>http://lizqwerscott.github.io/posts/2024/02/20240207102308-huggingface_%E4%B8%8B%E8%BD%BD%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Wed, 07 Feb 2024 11:07:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2024/02/20240207102308-huggingface_%E4%B8%8B%E8%BD%BD%E6%A8%A1%E5%9E%8B/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>llama.cpp 量化部署</title>
+      <link>http://lizqwerscott.github.io/posts/2024/02/20240206214507-llama_cpp_%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Wed, 07 Feb 2024 11:06:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2024/02/20240206214507-llama_cpp_%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux 软件</title>
+      <link>http://lizqwerscott.github.io/posts/2024/01/20231127205837-linux_%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Tue, 09 Jan 2024 21:50:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2024/01/20231127205837-linux_%E8%BD%AF%E4%BB%B6/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>nx版cv_bridge问题</title>
+      <link>http://lizqwerscott.github.io/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 25 Oct 2023 20:42:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
 </rss>
