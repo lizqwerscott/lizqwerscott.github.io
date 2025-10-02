@@ -9,12 +9,22 @@
     <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
     <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
     <copyright>© 2025 lizqwerscott</copyright>
-    <lastBuildDate>Sun, 15 Dec 2024 10:00:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Oct 2025 15:03:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux</title>
+      <link>http://lizqwerscott.github.io/categories/linux/</link>
+      <pubDate>Wed, 01 Oct 2025 15:03:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/categories/linux/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Emacs</title>
       <link>http://lizqwerscott.github.io/categories/emacs/</link>
-      <pubDate>Sun, 15 Dec 2024 10:00:00 +0800</pubDate>
+      <pubDate>Sat, 14 Dec 2024 20:58:00 +0800</pubDate>
       <author>lizqwerscott@gmail.com (lizqwerscott)</author>
       <guid>http://lizqwerscott.github.io/categories/emacs/</guid>
       <description></description>
@@ -27,26 +37,6 @@
       <pubDate>Wed, 07 Feb 2024 11:07:00 +0800</pubDate>
       <author>lizqwerscott@gmail.com (lizqwerscott)</author>
       <guid>http://lizqwerscott.github.io/categories/ai/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>http://lizqwerscott.github.io/categories/linux/</link>
-      <pubDate>Tue, 09 Jan 2024 21:50:00 +0800</pubDate>
-      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
-      <guid>http://lizqwerscott.github.io/categories/linux/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Program</title>
-      <link>http://lizqwerscott.github.io/categories/program/</link>
-      <pubDate>Wed, 25 Oct 2023 20:42:00 +0800</pubDate>
-      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
-      <guid>http://lizqwerscott.github.io/categories/program/</guid>
       <description></description>
       
     </item>

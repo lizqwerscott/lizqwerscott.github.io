@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meow on Lizqwerscott 的博客</title>
+    <link>http://lizqwerscott.github.io/tags/meow/</link>
+    <description>Recent content in Meow on Lizqwerscott 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
+    <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
+    <copyright>© 2025 lizqwerscott</copyright>
+    <lastBuildDate>Sat, 14 Dec 2024 20:58:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/tags/meow/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>meow 多行编辑的技巧</title>
+      <link>http://lizqwerscott.github.io/posts/2024/12/20241214t205845--meow-%E5%A4%9A%E8%A1%8C%E7%BC%96%E8%BE%91%E7%9A%84%E6%8A%80%E5%B7%A7__emacs_meow/</link>
+      <pubDate>Sat, 14 Dec 2024 20:58:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2024/12/20241214t205845--meow-%E5%A4%9A%E8%A1%8C%E7%BC%96%E8%BE%91%E7%9A%84%E6%8A%80%E5%B7%A7__emacs_meow/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>meow 进入 beacon-mode 后自动关闭括号自动配对功能</title>
+      <link>http://lizqwerscott.github.io/posts/2024/12/20241214t203953--meow-%E8%BF%9B%E5%85%A5-beacon-mode-%E5%90%8E%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E6%8B%AC%E5%8F%B7%E8%87%AA%E5%8A%A8%E9%85%8D%E5%AF%B9%E5%8A%9F%E8%83%BD__emacs_meow/</link>
+      <pubDate>Sat, 14 Dec 2024 20:39:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2024/12/20241214t203953--meow-%E8%BF%9B%E5%85%A5-beacon-mode-%E5%90%8E%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E6%8B%AC%E5%8F%B7%E8%87%AA%E5%8A%A8%E9%85%8D%E5%AF%B9%E5%8A%9F%E8%83%BD__emacs_meow/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -2,24 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Program on Lizqwerscott 的博客</title>
-    <link>http://lizqwerscott.github.io/categories/program/</link>
+    <link>http://localhost:1313/categories/program/</link>
     <description>Recent content in Program on Lizqwerscott 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
     <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
     <copyright>© 2025 lizqwerscott</copyright>
-    <lastBuildDate>Wed, 25 Oct 2023 20:42:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>nx版cv_bridge问题</title>
-      <link>http://lizqwerscott.github.io/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Wed, 25 Oct 2023 20:42:00 +0800</pubDate>
-      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
-      <guid>http://lizqwerscott.github.io/posts/2023/10/nx%E6%9D%BFcv_bridge%E9%97%AE%E9%A2%98/</guid>
-      <description></description>
-      
-    </item>
+    <atom:link href="http://localhost:1313/categories/program/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

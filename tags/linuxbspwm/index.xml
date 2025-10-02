@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>:Linux:bspwm: on Lizqwerscott 的博客</title>
+    <link>http://localhost:1313/tags/linuxbspwm/</link>
+    <description>Recent content in :Linux:bspwm: on Lizqwerscott 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
+    <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
+    <copyright>© 2025 lizqwerscott</copyright>
+    <lastBuildDate>Wed, 01 Oct 2025 15:03:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/linuxbspwm/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Bspwm 设置 xdg 环境变量</title>
+      <link>http://localhost:1313/posts/2025/10/20251001t150327--bspwm-%E8%AE%BE%E7%BD%AE-xdg-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F__bspwm_linux/</link>
+      <pubDate>Wed, 01 Oct 2025 15:03:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://localhost:1313/posts/2025/10/20251001t150327--bspwm-%E8%AE%BE%E7%BD%AE-xdg-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F__bspwm_linux/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

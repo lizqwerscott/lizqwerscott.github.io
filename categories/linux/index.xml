@@ -9,14 +9,44 @@
     <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
     <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
     <copyright>© 2025 lizqwerscott</copyright>
-    <lastBuildDate>Tue, 09 Jan 2024 21:50:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Oct 2025 15:03:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Bspwm 设置 xdg 环境变量</title>
+      <link>http://lizqwerscott.github.io/posts/2025/10/20251001t150327--bspwm-%E8%AE%BE%E7%BD%AE-xdg-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F__bspwm_linux/</link>
+      <pubDate>Wed, 01 Oct 2025 15:03:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2025/10/20251001t150327--bspwm-%E8%AE%BE%E7%BD%AE-xdg-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F__bspwm_linux/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux 下的默认应用程序</title>
+      <link>http://lizqwerscott.github.io/posts/2025/10/20251001t144429--linux-%E4%B8%8B%E7%9A%84%E9%BB%98%E8%AE%A4%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F__linux/</link>
+      <pubDate>Wed, 01 Oct 2025 14:44:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2025/10/20251001t144429--linux-%E4%B8%8B%E7%9A%84%E9%BB%98%E8%AE%A4%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F__linux/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>在 Ros melodic 版本上安装 cv bridge with python3</title>
+      <link>http://lizqwerscott.github.io/posts/2023/11/20231128t144727--%E5%9C%A8-ros-melodic-%E7%89%88%E6%9C%AC%E4%B8%8A%E5%AE%89%E8%A3%85-cv-bridge-with-python3__linux/</link>
+      <pubDate>Tue, 28 Nov 2023 14:47:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2023/11/20231128t144727--%E5%9C%A8-ros-melodic-%E7%89%88%E6%9C%AC%E4%B8%8A%E5%AE%89%E8%A3%85-cv-bridge-with-python3__linux/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Linux 软件</title>
-      <link>http://lizqwerscott.github.io/posts/2024/01/20231127205837-linux_%E8%BD%AF%E4%BB%B6/</link>
-      <pubDate>Tue, 09 Jan 2024 21:50:00 +0800</pubDate>
+      <link>http://lizqwerscott.github.io/posts/2023/11/20231127t205837--linux-%E8%BD%AF%E4%BB%B6__linux/</link>
+      <pubDate>Mon, 27 Nov 2023 20:58:00 +0800</pubDate>
       <author>lizqwerscott@gmail.com (lizqwerscott)</author>
-      <guid>http://lizqwerscott.github.io/posts/2024/01/20231127205837-linux_%E8%BD%AF%E4%BB%B6/</guid>
+      <guid>http://lizqwerscott.github.io/posts/2023/11/20231127t205837--linux-%E8%BD%AF%E4%BB%B6__linux/</guid>
       <description></description>
       
     </item>
