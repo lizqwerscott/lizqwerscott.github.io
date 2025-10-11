@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Lizqwerscott 的博客</title>
+    <link>http://lizqwerscott.github.io/tags/hugo/</link>
+    <description>Recent content in Hugo on Lizqwerscott 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
+    <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
+    <copyright>© 2025 lizqwerscott</copyright>
+    <lastBuildDate>Sat, 11 Oct 2025 16:26:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugo 中的旁注</title>
+      <link>http://lizqwerscott.github.io/posts/2025/10/20251011t162657--hugo-%E4%B8%AD%E7%9A%84%E6%97%81%E6%B3%A8__emacs_hugo_note_org/</link>
+      <pubDate>Sat, 11 Oct 2025 16:26:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2025/10/20251011t162657--hugo-%E4%B8%AD%E7%9A%84%E6%97%81%E6%B3%A8__emacs_hugo_note_org/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
