@@ -32,6 +32,8 @@
   
   
   
+    
+  
   
     
     
@@ -40,8 +42,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.428d3f47912f250d6b15eef3a4b5c092d5972305167a3e08eb3a8de37b650636b44c7e07d1164c21b563ff7aecf3ae1ea043e8c0cd7fcdc22496b90f79a62a7e.css"
-    integrity="sha512-Qo0/R5EvJQ1rFe7zpLXAktWXIwUWej4I6zqN43tlBja0TH4H0RZMIbVj/3rs864eoEPowM1/zcIklrkPeaYqfg==">
+    href="/css/main.bundle.min.acd1aa6b721f0cb467d504197b8390fc64ea13d8319e53514ffbeedd2b8f80c24b98240c210ef8ab6f5b2fa7f5720578a720c66751152658b25179a774a72610.css"
+    integrity="sha512-rNGqa3IfDLRn1QQZe4OQ/GTqE9gxnlNRT/vu3SuPgMJLmCQMIQ74q29bL6f1cgV4pyDGZ1EVJliyUXmndKcmEA==">
 
   
   
@@ -103,7 +105,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-02-07T11:06:00+08:00">
-    <meta property="article:modified_time" content="2025-10-02T15:16:40+08:00">
+    <meta property="article:modified_time" content="2025-10-11T13:10:07+08:00">
     <meta property="article:tag" content="Ai">
 
   
@@ -130,12 +132,12 @@
     "dateCreated": "2024-02-07T11:06:00\u002b08:00",
     "datePublished": "2024-02-07T11:06:00\u002b08:00",
     
-    "dateModified": "2025-10-02T15:16:40\u002b08:00",
+    "dateModified": "2025-10-11T13:10:07\u002b08:00",
     
     "keywords": ["ai"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "849"
+    "wordCount": "825"
   }]
   </script>
 
@@ -606,7 +608,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2024-02-07T11:06:00&#43;08:00">2024-02-07</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-02T15:16:40&#43;08:00">更新于: 2025-10-02</time><span class="px-2 text-primary-500">&middot;</span><span>849 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
+      <time datetime="2024-02-07T11:06:00&#43;08:00">2024-02-07</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-11T13:10:07&#43;08:00">更新于: 2025-10-11</time><span class="px-2 text-primary-500">&middot;</span><span>825 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
     
 
     
@@ -789,10 +791,9 @@
     </li>
     <li><a href="#关于量化方法选择及推理速度">关于量化方法选择及推理速度</a>
       <ul>
-        <li><a href="#结论">结论 </a></li>
+        <li><a href="#结论">结论</a></li>
       </ul>
     </li>
-    <li><a href="#注释">注释</a></li>
   </ul>
 </nav>
   </div>
@@ -849,10 +850,9 @@
     </li>
     <li><a href="#关于量化方法选择及推理速度">关于量化方法选择及推理速度</a>
       <ul>
-        <li><a href="#结论">结论 </a></li>
+        <li><a href="#结论">结论</a></li>
       </ul>
     </li>
-    <li><a href="#注释">注释</a></li>
   </ul>
 </nav>
   </div>
@@ -1143,7 +1143,7 @@
     target="_blank"
   >量化统计表格</a></p>
 
-<h3 class="relative group">结论 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 
+<h3 class="relative group">结论 
     <div id="结论" class="anchor"></div>
     
     <span
@@ -1152,7 +1152,11 @@
     </span>        
     
 </h3>
-<p>结论来源: <a
+<p>结论
+<span class="sidenote-number"><small class="sidenote">
+这个结论可能有点老了, QwQ
+</small></span>
+来源: <a
   href="https://github.com/ymcui/Chinese-LLaMA-Alpaca/wiki/llama.cpp%E9%87%8F%E5%8C%96%E9%83%A8%E7%BD%B2"
     target="_blank"
   >alpaca llama.cpp 量化部署</a></p>
@@ -1164,24 +1168,6 @@
 <li>综合推荐（仅供参考）：7B推荐 Q5_1 或 Q5_K_S，13B 推荐 Q5_0 或 Q5_K_S</li>
 <li>机器资源够用且对速度要求不是那么苛刻的情况下可以使用 q8_0 或 Q6_K，接近 F16 模型的效果</li>
 </ul>
-
-<h2 class="relative group">注释 
-    <div id="注释" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%b3%a8%e9%87%8a" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p>这个结论可能有点老了&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
 
           
           
