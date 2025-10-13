@@ -9,7 +9,17 @@
     <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
     <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
     <copyright>© 2025 lizqwerscott</copyright>
-    <lastBuildDate>Sat, 11 Oct 2025 16:26:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Oct 2025 15:51:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>test hugo math</title>
+      <link>http://lizqwerscott.github.io/posts/2025/10/20251013t155141--test-hugo-math__hugo/</link>
+      <pubDate>Mon, 13 Oct 2025 15:51:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2025/10/20251013t155141--test-hugo-math__hugo/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Hugo 中的旁注</title>

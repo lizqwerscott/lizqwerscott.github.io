@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Lizqwerscott 的博客</title>
+    <link>http://lizqwerscott.github.io/categories/hugo/</link>
+    <description>Recent content in Hugo on Lizqwerscott 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
+    <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
+    <copyright>© 2025 lizqwerscott</copyright>
+    <lastBuildDate>Mon, 13 Oct 2025 15:51:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>test hugo math</title>
+      <link>http://lizqwerscott.github.io/posts/2025/10/20251013t155141--test-hugo-math__hugo/</link>
+      <pubDate>Mon, 13 Oct 2025 15:51:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2025/10/20251013t155141--test-hugo-math__hugo/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
