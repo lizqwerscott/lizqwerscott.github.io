@@ -9,7 +9,7 @@
     <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
     <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
     <copyright>© 2025 lizqwerscott</copyright>
-    <lastBuildDate>Mon, 13 Oct 2025 15:51:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Nov 2025 09:50:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Irendy 的个人网站</title>
@@ -29,6 +29,16 @@
       <guid>http://lizqwerscott.github.io/friends/liyingzhi/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://lizqwerscott.github.io/friends/liyingzhi/feature.png" />
+    </item>
+    
+    <item>
+      <title>Emacs 中的补全</title>
+      <link>http://lizqwerscott.github.io/posts/2025/11/20251121t095024--emacs-%E4%B8%AD%E7%9A%84%E8%A1%A5%E5%85%A8__emacs/</link>
+      <pubDate>Fri, 21 Nov 2025 09:50:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2025/11/20251121t095024--emacs-%E4%B8%AD%E7%9A%84%E8%A1%A5%E5%85%A8__emacs/</guid>
+      <description></description>
+      
     </item>
     
     <item>
