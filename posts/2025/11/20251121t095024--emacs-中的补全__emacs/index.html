@@ -105,7 +105,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-11-21T09:50:00+08:00">
-    <meta property="article:modified_time" content="2025-11-21T16:51:34+08:00">
+    <meta property="article:modified_time" content="2025-11-25T17:51:59+08:00">
     <meta property="article:tag" content="Emacs">
 
   
@@ -132,12 +132,12 @@
     "dateCreated": "2025-11-21T09:50:00\u002b08:00",
     "datePublished": "2025-11-21T09:50:00\u002b08:00",
     
-    "dateModified": "2025-11-21T16:51:34\u002b08:00",
+    "dateModified": "2025-11-25T17:51:59\u002b08:00",
     
     "keywords": ["emacs"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1899"
+    "wordCount": "2441"
   }]
   </script>
 
@@ -607,6 +607,8 @@
   
 
   
+    
+  
 
   
     
@@ -632,7 +634,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-21T09:50:00&#43;08:00">2025-11-21</time><span class="px-2 text-primary-500">&middot;</span><span>1899 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span>
+      <time datetime="2025-11-21T09:50:00&#43;08:00">2025-11-21</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-11-25T17:51:59&#43;08:00">更新于: 2025-11-25</time><span class="px-2 text-primary-500">&middot;</span><span>2441 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 
@@ -1068,8 +1070,7 @@
   href="https://www.gnu.org/software/emacs/manual/html_node/ido/index.html"title="Emacs Lisp: (info \&#34;(ido) Top\&#34;)"
     target="_blank"
   >Ido</a></p>
-<p>Ido 包允许您以最少的按键次数切换缓冲区并访问文件和目录。它是 <code>Stephen Eglen</code> 开发的交互式缓冲区切换包 Iswitchb 的超集，给默认切换 buffer 和打开文件提供了更加强大的功能，显示补全项的方式是直接在输入的后面使用 { a | b } 来显示。
-但是默认不支持 <code>M-x</code> 的补全显示，需要安装 <a
+<p>Ido 包允许您以最少的按键次数切换缓冲区并访问文件和目录。它是 <code>Stephen Eglen</code> 开发的交互式缓冲区切换包 Iswitchb 的超集，给默认切换 buffer 和打开文件提供了更加强大的功能，显示补全项的方式是直接在输入的后面使用 { a | b } 来显示。但是默认不支持 <code>M-x</code> 的补全显示，需要安装 <a
   href="https://github.com/nonsequitur/smex/"
     target="_blank"
   >smex</a> 来使用 <code>ido</code> 风格的补全显示方式。</p>
@@ -1126,8 +1127,57 @@
   href="https://github.com/minad/vertico"
     target="_blank"
   >vertico</a></p>
-<p>目前最新的框架，可以支持前端样式，能根据补全的内容自定义补全样式。
-能支持同时多种类别补全项目展示，根据补全项的分类来分隔展示。</p>
+<p>目前最新的框架，可以支持前端样式，能根据补全的内容自定义补全样式。</p>
+<p>能支持同时显示多种类别的补全样式。</p>
+ <!--list-separator-->
+<ul>
+<li>
+<p>给 <code>vertico</code> 添加箭头</p>
+<p>可以在补全项之前添加一个箭头，来源是<a
+  href="https://github.com/minad/vertico/wiki#prefix-current-candidate-with-arrow"
+    target="_blank"
+  >Vertico 官方 Wiki</a>, 但是做了一些修改。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defcustom</span> <span class="nv">vertico-show-arrow</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Vertico arrow.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:group</span> <span class="ss">&#39;vertico</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:type</span> <span class="ss">&#39;boolean</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defvar</span> <span class="nv">+vertico-current-arrow</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">cl-defmethod</span> <span class="nv">vertico--format-candidate</span> <span class="nb">:around</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">cand</span> <span class="nv">prefix</span> <span class="nv">suffix</span> <span class="nv">index</span> <span class="nv">start</span> <span class="nv">&amp;context</span> <span class="p">((</span><span class="nb">and</span> <span class="nv">+vertico-current-arrow</span>
+</span></span><span class="line"><span class="cl">                                                 <span class="p">(</span><span class="nv">not</span> <span class="p">(</span><span class="nv">bound-and-true-p</span> <span class="nv">vertico-flat-mode</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">                                            <span class="p">(</span><span class="nf">eql</span> <span class="no">t</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">cand</span> <span class="p">(</span><span class="nv">cl-call-next-method</span> <span class="nv">cand</span> <span class="nv">prefix</span> <span class="nv">suffix</span> <span class="nv">index</span> <span class="nv">start</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">arrow</span> <span class="p">(</span><span class="nf">propertize</span> <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nv">char-displayable-p</span> <span class="sc">?»</span><span class="p">)</span> <span class="s">&#34;» &#34;</span> <span class="s">&#34;&gt; &#34;</span><span class="p">)</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-keyword-face</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nv">not</span> <span class="p">(</span><span class="nv">bound-and-true-p</span> <span class="nv">vertico-grid-mode</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">             <span class="nv">vertico-show-arrow</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">=</span> <span class="nv">vertico--index</span> <span class="nv">index</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="nf">concat</span> <span class="nv">arrow</span> <span class="nv">cand</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;  &#34;</span> <span class="nv">cand</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">cand</span><span class="p">)))</span>
+</span></span></code></pre></div></li>
+</ul>
+ <!--list-separator-->
+<ul>
+<li>
+<p>类似 <code>ivy/ido</code> 风格的路径输入</p>
+<p>来自 <a
+  href="https://github.com/minad/vertico/wiki#make-vertico-and-vertico-directory-behave-more-like-ivyido"
+    target="_blank"
+  >Vertico 官方 Wiki</a></p>
+<p>如果当前按键 / 时该候选文件是目录，my/vertico-insert 会插入该候选文件，允许 IDO 和 Ivy 用户熟悉的样式快速导航文件系统。如果前一个字符是 /~ 或 ：，则不会插入第一个候选。这使得在将搜索提示重置为文件系统根、主目录或作 TRAMP 前缀时，行为与 ido 和 ivy 的行为一致。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">my/vertico-insert</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">let*</span> <span class="p">((</span><span class="nv">mb</span> <span class="p">(</span><span class="nf">minibuffer-contents-no-properties</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="nv">lc</span> <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nv">string=</span> <span class="nv">mb</span> <span class="s">&#34;&#34;</span><span class="p">)</span> <span class="nv">mb</span> <span class="p">(</span><span class="nf">substring</span> <span class="nv">mb</span> <span class="mi">-1</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">cond</span> <span class="p">((</span><span class="nv">string-match-p</span> <span class="s">&#34;^[/~:]&#34;</span> <span class="nv">lc</span><span class="p">)</span> <span class="p">(</span><span class="nf">self-insert-command</span> <span class="mi">1</span> <span class="sc">?/</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">          <span class="p">((</span><span class="nf">file-directory-p</span> <span class="p">(</span><span class="nv">vertico--candidate</span><span class="p">))</span> <span class="p">(</span><span class="nv">vertico-insert</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="no">t</span> <span class="p">(</span><span class="nf">self-insert-command</span> <span class="mi">1</span> <span class="sc">?/</span><span class="p">)))))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">keymap-set</span> <span class="nv">vertico-map</span> <span class="s">&#34;/&#34;</span> <span class="nf">#&#39;</span><span class="nv">my/vertico-insert</span><span class="p">)</span>
+</span></span></code></pre></div></li>
+</ul>
 </li>
 </ul>
 
@@ -1338,19 +1388,55 @@
   >fussy-orderless</a> 文件。</p>
 <p>主要核心内容就是给每一个 <code>orderless</code> 的前缀添加评分，最后计算总共的评分，将各个评分相加起来。</p>
 <p>例如，以下代码用于计算中文内容的评分:
-通过评估匹配内容在整体中的占比及其位置信息来计算得分<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">fussy-orderless-chinese-regexp-score</span> <span class="p">(</span><span class="nf">string</span> <span class="nv">query</span><span class="p">)</span>
+通过评估匹配内容在整体中的占比及其位置信息和匹配到的长度来计算得分<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
+<p><code>pyim</code> 根据 <code>query</code> 计算出来 <code>regexp</code> 进行一个缓存，来加快计算速度。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defvar</span> <span class="nv">fussy-orderless--chinese-regexp-cache</span> <span class="p">(</span><span class="nf">make-hash-table</span> <span class="nb">:test</span> <span class="nf">#&#39;equal</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Chinese regexp cache.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">fussy-orderless--chinese-cache-put</span> <span class="p">(</span><span class="nv">key</span> <span class="nv">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Store VALUE in the Chinese regexp cache under KEY.
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">KEY is a string used as the lookup key, and VALUE is the corresponding regexp
+</span></span></span><span class="line"><span class="cl"><span class="s">pattern to store.
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">The actual cache key is computed by applying </span><span class="ss">`secure-hash&#39;</span><span class="s"> with MD5 algorithm to
+</span></span></span><span class="line"><span class="cl"><span class="s">KEY for efficient storage and lookup.
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">This function updates the hash table </span><span class="ss">`fussy-orderless--chinese-regexp-cache&#39;</span><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">with the computed hash key and VALUE pair.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">hash-key</span> <span class="p">(</span><span class="nf">secure-hash</span> <span class="ss">&#39;md5</span> <span class="nv">key</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nf">puthash</span> <span class="nv">hash-key</span> <span class="nv">value</span> <span class="nv">fussy-orderless--chinese-regexp-cache</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">fussy-orderless--chinese-cache-get</span> <span class="p">(</span><span class="nv">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Retrieve the cached regexp value for KEY from the Chinese regexp cache.
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">KEY is a string used as the lookup key.
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">This function computes the MD5 hash of KEY using </span><span class="ss">`secure-hash&#39;</span><span class="s"> and looks up the
+</span></span></span><span class="line"><span class="cl"><span class="s">corresponding value in the hash table </span><span class="ss">`fussy-orderless--chinese-regexp-cache&#39;</span><span class="s">.
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">Return the cached regexp pattern if found, or nil if no entry exists for KEY.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">hash-key</span> <span class="p">(</span><span class="nf">secure-hash</span> <span class="ss">&#39;md5</span> <span class="nv">key</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nf">gethash</span> <span class="nv">hash-key</span> <span class="nv">fussy-orderless--chinese-regexp-cache</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">fussy-orderless-chinese-regexp-score</span> <span class="p">(</span><span class="nf">string</span> <span class="nv">query</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="s">&#34;Use QUERY and STRING calc chinese regexp score.&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;pyim</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">when-let*</span> <span class="p">(((</span><span class="nv">string-match-p</span> <span class="s">&#34;\\cc&#34;</span> <span class="nf">string</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">              <span class="p">(</span><span class="nv">regexp</span> <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">fboundp</span> <span class="ss">&#39;pyim-cregexp-build</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                        <span class="p">(</span><span class="nv">pyim-cregexp-build</span> <span class="nv">query</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">(</span><span class="nb">let*</span> <span class="p">((</span><span class="nv">cache</span> <span class="p">(</span><span class="nv">fussy-orderless--chinese-cache-get</span> <span class="nv">query</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">                          <span class="p">(</span><span class="nb">if</span> <span class="nv">cache</span>
+</span></span><span class="line"><span class="cl">                              <span class="nv">cache</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">regexp</span> <span class="p">(</span><span class="nv">pyim-cregexp-build</span> <span class="nv">query</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">                              <span class="p">(</span><span class="nv">fussy-orderless--chinese-cache-put</span> <span class="nv">query</span> <span class="nv">regexp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                              <span class="nv">regexp</span><span class="p">))))))</span>
 </span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nf">string-match</span> <span class="nv">regexp</span> <span class="nf">string</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">pcase-let*</span> <span class="p">((</span><span class="o">`</span><span class="p">(</span><span class="o">,</span><span class="nv">start</span> <span class="o">,</span><span class="nv">end</span><span class="p">)</span> <span class="p">(</span><span class="nf">match-data</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">                 <span class="p">(</span><span class="nv">len</span> <span class="p">(</span><span class="nf">length</span> <span class="nf">string</span><span class="p">)))</span>
 </span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">&lt;</span> <span class="nv">end</span> <span class="nv">len</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nf">list</span> <span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="nf">*</span> <span class="mi">20</span> <span class="p">(</span><span class="nf">/</span> <span class="p">(</span><span class="nf">float</span> <span class="p">(</span><span class="nf">-</span> <span class="nv">end</span> <span class="nv">start</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">                          <span class="nv">len</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                 <span class="p">(</span><span class="nf">*</span> <span class="mi">60</span> <span class="p">(</span><span class="nf">-</span> <span class="nv">end</span> <span class="nv">start</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">                 <span class="p">(</span><span class="nf">*</span> <span class="mi">80</span> <span class="p">(</span><span class="nf">/</span> <span class="p">(</span><span class="nf">float</span> <span class="p">(</span><span class="nf">-</span> <span class="nv">len</span> <span class="nv">start</span><span class="p">))</span> <span class="nv">len</span><span class="p">)))</span>
 </span></span><span class="line"><span class="cl">              <span class="nv">start</span>
 </span></span><span class="line"><span class="cl">              <span class="nv">end</span><span class="p">)))))</span>
@@ -1362,6 +1448,21 @@
 </span></span></code></pre></div><p>然后就是将过滤函数设置 <code>orderless</code>, 评分函数设置成我上面写的函数，目前只支持 <code>flx-rs</code> 和 <code>flx</code> 。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">setopt</span> <span class="nv">fussy-score-fn</span> <span class="ss">&#39;fussy-orderless-score-with-flx-rs</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">fussy-filter-fn</span> <span class="ss">&#39;fussy-filter-orderless-flex</span><span class="p">)</span>
+</span></span></code></pre></div><p>如果想要与 <a
+  href="https://github.com/minad/corfu"
+    target="_blank"
+  >corfu</a> 一起使用，可以使用一下代码。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">with-eval-after-load</span> <span class="ss">&#39;corfu</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; 缓存</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">advice-add</span> <span class="ss">&#39;corfu--capf-wrapper</span> <span class="nb">:before</span> <span class="ss">&#39;fussy-wipe-cache</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;corfu-mode-hook</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="nb">lambda</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">              <span class="c1">;; corfu 补全的时候使用普通计分函数，提高速度。</span>
+</span></span><span class="line"><span class="cl">              <span class="p">(</span><span class="nb">setq-local</span> <span class="nv">fussy-score-fn</span> <span class="ss">&#39;flx-rs-score</span>
+</span></span><span class="line"><span class="cl">                          <span class="nv">fussy-max-candidate-limit</span> <span class="mi">5000</span>
+</span></span><span class="line"><span class="cl">                          <span class="nv">fussy-default-regex-fn</span> <span class="ss">&#39;fussy-pattern-first-letter</span>
+</span></span><span class="line"><span class="cl">                          <span class="nv">fussy-prefer-prefix</span> <span class="no">nil</span><span class="p">))))</span>
 </span></span></code></pre></div>
 <h2 class="relative group">附录 
     <div id="附录" class="anchor"></div>
