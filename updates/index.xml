@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>最近更新 on Lizqwerscott 的博客</title>
+    <link>http://lizqwerscott.github.io/updates/</link>
+    <description>Recent content in 最近更新 on Lizqwerscott 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
+    <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
+    <copyright>© 2025 lizqwerscott</copyright>
+    <atom:link href="http://lizqwerscott.github.io/updates/index.xml" rel="self" type="application/rss+xml" />
+    
+  </channel>
+</rss>
