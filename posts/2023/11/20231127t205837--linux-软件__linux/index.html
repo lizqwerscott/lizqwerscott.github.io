@@ -105,7 +105,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2023-11-27T20:58:00+08:00">
-    <meta property="article:modified_time" content="2025-12-29T17:42:13+08:00">
+    <meta property="article:modified_time" content="2025-12-29T17:58:05+08:00">
     <meta property="article:tag" content="Linux">
 
   
@@ -132,12 +132,12 @@
     "dateCreated": "2023-11-27T20:58:00\u002b08:00",
     "datePublished": "2023-11-27T20:58:00\u002b08:00",
     
-    "dateModified": "2025-12-29T17:42:13\u002b08:00",
+    "dateModified": "2025-12-29T17:58:05\u002b08:00",
     
     "keywords": ["linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1307"
+    "wordCount": "1370"
   }]
   </script>
 
@@ -664,7 +664,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2023-11-27T20:58:00&#43;08:00">2023-11-27</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-12-29T17:42:13&#43;08:00">更新于: 2025-12-29</time><span class="px-2 text-primary-500">&middot;</span><span>1307 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span><span class="px-2 text-primary-500">&middot;</span>
+      <time datetime="2023-11-27T20:58:00&#43;08:00">2023-11-27</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-12-29T17:58:05&#43;08:00">更新于: 2025-12-29</time><span class="px-2 text-primary-500">&middot;</span><span>1370 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 
@@ -1637,7 +1637,12 @@
     
 </h3>
 <p><code>cat</code> 替代品，支持多种编程语言和标记语言的语法高亮显示。</p>
-
+<p>Ubuntu 安装的时候，可能会与其他软件包名字冲突，所以默认名字是 <code>batcat</code>.
+可以创建一个链接或者别名来保证和其他系统名称一致：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p ~/.local/bin
+</span></span><span class="line"><span class="cl">ln -s /usr/bin/batcat ~/.local/bin/bat
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">bat</span><span class="o">=</span><span class="s2">&#34;batcat&#34;</span>
+</span></span></code></pre></div>
 <h2 class="relative group">命令行垃圾回收 
     <div id="命令行垃圾回收" class="anchor"></div>
     
