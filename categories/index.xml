@@ -9,7 +9,17 @@
     <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
     <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
     <copyright>© 2026 lizqwerscott</copyright>
-    <lastBuildDate>Fri, 21 Nov 2025 09:50:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Apr 2026 00:02:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Gemini</title>
+      <link>http://lizqwerscott.github.io/categories/gemini/</link>
+      <pubDate>Sat, 04 Apr 2026 00:02:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/categories/gemini/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Emacs</title>

@@ -3,20 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://lizqwerscott.github.io/posts/2025/11/20251121t095024--emacs-%E4%B8%AD%E7%9A%84%E8%A1%A5%E5%85%A8__emacs/</loc>
-    <lastmod>2025-11-25T17:51:59+08:00</lastmod>
+    <loc>http://lizqwerscott.github.io/posts/2026/04/20260404t000213--gemini-%E5%8D%8F%E8%AE%AE%E4%BB%8B%E7%BB%8D__gemini/</loc>
+    <lastmod>2026-04-04T10:51:44+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://lizqwerscott.github.io/</loc>
-    <lastmod>2026-01-28T12:43:26+08:00</lastmod>
+    <lastmod>2026-04-04T10:51:44+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://lizqwerscott.github.io/posts/</loc>
-    <lastmod>2026-01-28T12:43:26+08:00</lastmod>
+    <lastmod>2026-04-04T10:51:44+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://lizqwerscott.github.io/posts/2025/11/20251121t095024--emacs-%E4%B8%AD%E7%9A%84%E8%A1%A5%E5%85%A8__emacs/</loc>
+    <lastmod>2025-11-25T17:51:59+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

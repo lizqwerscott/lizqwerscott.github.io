@@ -9,7 +9,7 @@
     <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
     <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
     <copyright>© 2026 lizqwerscott</copyright>
-    <lastBuildDate>Fri, 21 Nov 2025 09:50:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Apr 2026 00:02:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Irendy 的个人网站</title>
@@ -29,6 +29,16 @@
       <guid>http://lizqwerscott.github.io/friends/liyingzhi/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://lizqwerscott.github.io/friends/liyingzhi/feature.png" />
+    </item>
+    
+    <item>
+      <title>Gemini 协议介绍</title>
+      <link>http://lizqwerscott.github.io/posts/2026/04/20260404t000213--gemini-%E5%8D%8F%E8%AE%AE%E4%BB%8B%E7%BB%8D__gemini/</link>
+      <pubDate>Sat, 04 Apr 2026 00:02:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2026/04/20260404t000213--gemini-%E5%8D%8F%E8%AE%AE%E4%BB%8B%E7%BB%8D__gemini/</guid>
+      <description></description>
+      
     </item>
     
     <item>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gemini on Lizqwerscott 的博客</title>
+    <link>http://lizqwerscott.github.io/tags/gemini/</link>
+    <description>Recent content in Gemini on Lizqwerscott 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>lizqwerscott@gmail.com (lizqwerscott)</managingEditor>
+    <webMaster>lizqwerscott@gmail.com (lizqwerscott)</webMaster>
+    <copyright>© 2026 lizqwerscott</copyright>
+    <lastBuildDate>Sat, 04 Apr 2026 00:02:00 +0800</lastBuildDate><atom:link href="http://lizqwerscott.github.io/tags/gemini/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Gemini 协议介绍</title>
+      <link>http://lizqwerscott.github.io/posts/2026/04/20260404t000213--gemini-%E5%8D%8F%E8%AE%AE%E4%BB%8B%E7%BB%8D__gemini/</link>
+      <pubDate>Sat, 04 Apr 2026 00:02:00 +0800</pubDate>
+      <author>lizqwerscott@gmail.com (lizqwerscott)</author>
+      <guid>http://lizqwerscott.github.io/posts/2026/04/20260404t000213--gemini-%E5%8D%8F%E8%AE%AE%E4%BB%8B%E7%BB%8D__gemini/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
